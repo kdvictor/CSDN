@@ -63,14 +63,14 @@ set(var 1)
 while(var)
 	math(EXPR var "${var} + 1")
 	math(EXPR re "${var} % 10")
-	message("var = ${var}")
-	message("re = ${re}")
 
 	if(re) #非10的倍数结束本次循环
 		continue()
 	endif()
 
 	if(var GREATER 20)
+		message("var = ${var}")
+	    message("re = ${re}")
 		set(var 0)
 	endif()
 
