@@ -1,0 +1,1 @@
+message("in test_cmake.cmake")
