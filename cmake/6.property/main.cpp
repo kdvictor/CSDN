@@ -1,20 +1,20 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 
 int main()
 {
 #ifdef PARA1
-	cout << "²âÊÔÍ¨¹ýÉèÖÃÎÄ¼þÊôÐÔCOMPILE_DEFINITIONS¸øC++´«µÝÖµ" << endl;
+	cout << "æµ‹è¯•é€šè¿‡è®¾ç½®æ–‡ä»¶å±žæ€§COMPILE_DEFINITIONSç»™C++ä¼ é€’å€¼" << endl;
 	cout << "PARA1 = " << PARA1 << endl;
 #endif
 
 #ifdef PARA2
-	cout << "²âÊÔÍ¨¹ýÉèÖÃÄ¿±êÊôÐÔCOMPILE_DEFINITIONS¸øC++´«µÝÖµ" << endl;
+	cout << "æµ‹è¯•é€šè¿‡è®¾ç½®ç›®æ ‡å±žæ€§COMPILE_DEFINITIONSç»™C++ä¼ é€’å€¼" << endl;
 	cout << "PARA2 = " << PARA2 << endl;
 #endif
 
 #ifdef PARA3
-	cout << "²âÊÔÍ¨¹ýÉèÖÃÄ¿±ê×·¼ÓÊôÐÔ¸øC++´«µÝÖµ" << endl;
+	cout << "æµ‹è¯•é€šè¿‡è®¾ç½®ç›®æ ‡è¿½åŠ å±žæ€§ç»™C++ä¼ é€’å€¼" << endl;
 	cout << "PARA3 = " << PARA3 << endl;
 #endif
 
