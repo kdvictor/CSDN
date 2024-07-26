@@ -4,8 +4,11 @@ project(cache)
 
 #cache: 缓存变量，会缓存起来，全局性质
 #普通变量的作用域在于自身和子模块
-#BOOL FILEPATH PATH STRING INTERNAL(不会开放给用户) docstring(鼠标提示说明) FORCE
+#主要类型：BOOL FILEPATH PATH STRING INTERNAL(不会开放给用户) 
+#docstring：鼠标提示说明
+#FORCE：强制修改缓存变量
 
+#set(变量名 变量值 CACHE 变量类型 鼠标提示说明)
 set(cache_var1 "cache_var1" CACHE STRING "cache docstring")
 message("cache_var1 = ${cache_var1}")
 #一般修改无法修改cache变量
