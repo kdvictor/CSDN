@@ -13,4 +13,4 @@ message("in main sub1_env = $ENV{sub1_env}")
 
 
 #2.可以访问系统的环境变量
-message("kokkos_DIR = ${kokkos_DIR}")
+message("kokkos_DIR = $ENV{kokkos_DIR}")
