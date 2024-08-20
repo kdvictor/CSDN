@@ -1,41 +1,35 @@
 cmake_minimum_required(VERSION 3.20)
 project(string)
 
-#查找字符串的位置
+#截取字符串"begin test cmake string end"中的子字符串"test cmake string"
+
 set(str "begin test cmake string end")
-#要查找的字符串
-set(sub_str1 "begin")
-set(sub_str2 "end")
-#在str1中查找sub_str的位置并存入pos中,位置从0开始
-string(FIND ${str} ${sub_str1} pos1)
-string(FIND ${str} ${sub_str2} pos2)
+set(sub_str1 "begin") #查找字符串begin的位置
+set(sub_str2 "end") #查找字符串end的位置
+string(FIND ${str} ${sub_str1} pos1) #在str中查找begin的位置并存入pos1中
+string(FIND ${str} ${sub_str2} pos2) #在str中查找end的位置并存入pos1中
 message("FIND ${sub_str1} POS ${pos1}")
 message("FIND ${sub_str2} POS ${pos2}")
 
-#获取字符串长度
-string(LENGTH ${sub_str1} length_str1)
-math(EXPR pos1 "${pos1} + ${length_str1}")
-math(EXPR sub_length "${pos2} - ${pos1}")
-string(SUBSTRING ${str} ${pos1} ${sub_length} substr)
-message("substr: [${substr}]")
-#去掉空格
-string(STRIP ${substr} substr)
+string(LENGTH ${sub_str1} length_str1) #获取字符串begin的长度
+math(EXPR pos1 "${pos1} + ${length_str1}") #将begin的位置加上begin的长度即为字串的起始位置
+math(EXPR sub_length "${pos2} - ${pos1}") #求子字符串的长度
+string(SUBSTRING ${str} ${pos1} ${sub_length} substr) #提取子字符串存入substr
+message("substr: [${substr}]") #加[]是为了看字符串前后有没有空格
+
+string(STRIP ${substr} substr) #去掉空格
 message("substr: [${substr}]")
 
-#转大写
-string(TOUPPER ${substr} substr)
+string(TOUPPER ${substr} substr) #转大写
 message("substr: [${substr}]")
 
-#追加
-string(APPEND substr " append001 " " append002 ")
+string(APPEND substr " append001 " " append002 ") #追加字符串
 message("substr: [${substr}]")
 
-#替换
-string(REPLACE "append" "REPLACE" replacestr ${substr})
+string(REPLACE "append" "REPLACE" replacestr ${substr}) #替换字符串
 message("replacestr: [${replacestr}]")
 
-#正则表达式匹配
-string(REGEX MATCH "[A-Z]+[0-9]+" regexstr ${replacestr})
+string(REGEX MATCH "[A-Z]+[0-9]+" regexstr ${replacestr})#正则表达式匹配字符串
 message("regexstr: [${regexstr}]")
 
 #JSON操作
